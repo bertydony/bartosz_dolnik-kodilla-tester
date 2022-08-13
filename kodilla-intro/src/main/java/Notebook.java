@@ -15,7 +15,6 @@ public class Notebook {
         }else{
             System.out.println("This notebook is expensive");
         }
-
     }
     public void checkWeight(){
         if(this.weight <= 600){
@@ -25,7 +24,6 @@ public class Notebook {
         }else{
             System.out.println("This notebook is heavy");
         }
-
     }
     public void checkPriceAndYear() {
         if (this.price > 1800 && this.year >= 2020) {
