@@ -14,6 +14,8 @@ public class Calculator {
     }
 
     public double circleArea(double r) {
+        String name = UserDialogs.getUsername();
+        System.out.println("Hi, "+name+". Thank for use.");
         return PI * r * r;
     }
 

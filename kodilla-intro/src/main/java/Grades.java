@@ -26,7 +26,6 @@ public class Grades {
         int sum = 0;
         for (int i = 0; i < grades.length; i++) {
             sum = sum + grades.length;
-        }
-        return sum / grades.length;
+        }return sum / grades.length;
     }
 }
