@@ -1,4 +1,3 @@
-
 public class User {
     public String name;
     public int age;
@@ -17,15 +16,14 @@ public class User {
 
         User[] users = {bartek, marcin, kasia, krzysio, rafal};
 
-       double sum = 0;
-        for (int i = 0; i < users.length ; i++) {
+        double sum = 0;
+        for (int i = 0; i < users.length; i++) {
             sum = sum + users[i].age;
         }
         System.out.println(sum / users.length);
-
         double averange = sum / users.length;
-        for (int i = 0; i < users.length; i++){
-            if(users[i].age < averange){
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].age < averange) {
                 System.out.println(users[i].name);
             }
         }
