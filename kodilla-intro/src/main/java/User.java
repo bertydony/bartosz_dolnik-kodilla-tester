@@ -20,10 +20,11 @@ public class User {
         for (int i = 0; i < users.length; i++) {
             sum = sum + users[i].age;
         }
+
         System.out.println(sum / users.length);
-        double averange = sum / users.length;
+        double average = sum / users.length;
         for (int i = 0; i < users.length; i++) {
-            if (users[i].age < averange) {
+            if (users[i].age < average) {
                 System.out.println(users[i].name);
             }
         }
