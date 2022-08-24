@@ -29,9 +29,9 @@ public class RandomNumbers {
         }
     }
 
-    public void getMax(int randomNumber) {
-        if (randomNumber > max) {
-            max = randomNumber;
+    public void getMax(int random) {
+        if (random > max) {
+            max = random;
         }
     }
 }
