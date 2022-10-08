@@ -7,7 +7,6 @@ public class UsersManager {
     public static void main(String[] args) {
         List<String> chemistGroupUsernames = filterChemistGroupUsernames();
         System.out.println(chemistGroupUsernames);
-
     }
 
     public static List<String> filterChemistGroupUsernames() {
@@ -16,10 +15,8 @@ public class UsersManager {
                 .filter(user -> user.getGroup().equals("Chemists"))
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());
-
         return usernames;
     }
-
 
     public static String getUserName(User user) {
         return user.getUsername();
@@ -28,12 +25,12 @@ public class UsersManager {
     public static List<User> getHigherAge(int age) {
         List<User> users = UseRepository.getUserList()
                 .stream()
-                .filter(n -> n.getAge() > age )
+                .filter(n -> n.getAge() > age)
                 .collect(Collectors.toList());
-      return users;
+        return users;
     }
 
-    public static List<User> getNumberOfPostsAndGroupFilter(int post,String group) {
+    public static List<User> getNumberOfPostsAndGroupFilter(int post, String group) {
         List<User> users = UseRepository.getUserList()
                 .stream()
                 .filter(n -> n.getNumberOfPost() >= post && n.getGroup().equals(group))
