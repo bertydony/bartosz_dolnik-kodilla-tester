@@ -12,4 +12,3 @@ public class NotificationService implements NotificationServiceInterface {
         System.out.println("Package not delivered to: " + address);
     }
 }
-
