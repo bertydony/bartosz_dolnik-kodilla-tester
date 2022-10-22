@@ -19,35 +19,38 @@ class GamblingMachineTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/wrongNumbers.csv")
     public void shouldThrowExceptionWithWrongNumbers(String numbers) {
-        String[] expectedArray = numbers.split(",");
+        String[] expectedArray = numbers.split(" ");
         Set<String> expectedSet = new HashSet<>(Arrays.asList(expectedArray));
+        System.out.println(expectedSet);
         List<Integer> numbersToValidate = expectedSet
                 .stream()
                 .map(u -> Integer.parseInt(u))
                 .collect(Collectors.toList());
         Set<Integer> expected = new HashSet<>(numbersToValidate);
-        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.validateNumbers(expected));
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(expected));
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/correctNumbers.csv")
     public void shouldPassValidatingMethodWithValidNumbers(String numbers) throws InvalidNumbersException {
-        String[] expectedArray = numbers.split(",");
+        String[] expectedArray = numbers.split(" ");
         Set<String> expectedSet = new HashSet<>(Arrays.asList(expectedArray));
+        System.out.println(expectedSet);
         List<Integer> numbersToValidate = expectedSet
                 .stream()
                 .map(u -> Integer.parseInt(u))
                 .collect(Collectors.toList());
         Set<Integer> expected = new HashSet<>(numbersToValidate);
-        GamblingMachine.validateNumbers(expected);
+        gamblingMachine.howManyWins(expected);
         assertEquals(6,expected.size());
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/wrongNumbers.csv")
     public void shouldNotCountWins(String numbers) throws InvalidNumbersException {
-        String[] expectedArray = numbers.split(",");
+        String[] expectedArray = numbers.split(" ");
         Set<String> expectedSet = new HashSet<>(Arrays.asList(expectedArray));
+        System.out.println(expectedSet);
         List<Integer> numbersToValidate = expectedSet
                 .stream()
                 .map(u -> Integer.parseInt(u))
@@ -59,8 +62,9 @@ class GamblingMachineTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/correctNumbers.csv")
     public void shouldCountWins(String numbers) throws InvalidNumbersException {
-        String[] expectedArray = numbers.split(",");
+        String[] expectedArray = numbers.split(" ");
         Set<String> expectedSet = new HashSet<>(Arrays.asList(expectedArray));
+        System.out.println(expectedSet);
         List<Integer> numbersToValidate = expectedSet
                 .stream()
                 .map(u -> Integer.parseInt(u))
